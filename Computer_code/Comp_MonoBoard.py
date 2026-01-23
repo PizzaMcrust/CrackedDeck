@@ -13,7 +13,7 @@ def MonoBoard(x):
     elif x == '2':
         winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)  # Plays Windows ding sound
     elif x == '3':
-        AudioPlay.playsound('extremely-loud-incorrect-buzzer_0cDaG20.mp3') # Plays a custom sound file
+        AudioPlay.playsound('Media\\BUZZ.mp3') # Plays a custom sound file
     elif x == 'A':
         x = win32api.MapVirtualKey(win32con.VK_MEDIA_PREV_TRACK,0) # Previous track
         win32api.keybd_event(win32con.VK_MEDIA_PREV_TRACK,x)
