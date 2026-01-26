@@ -6,10 +6,10 @@ import Run
 # Open serial port (match baud rate 9600)
 print("Listening for keypad presses...")
 
-def MonoBoard(x):
+def NumBoard(x):
     print(f"Key pressed: {x}")        
     if x == '1':
-        subprocess.Popen(['notepad.exe'])  # Opens Notepad
+        subprocess.Popen(['brave.exe'])  # Opens Notepad
     elif x == '2':
         winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)  # Plays Windows ding sound
     elif x == '3':
@@ -30,4 +30,4 @@ def MonoBoard(x):
         x = win32api.MapVirtualKey(win32con.VK_UP,0) # Next track
         win32api.keybd_event(win32con.VK_UP,x)
     elif x == '*':
-        Run.Mode = 1
+        Run.Mode = 0
