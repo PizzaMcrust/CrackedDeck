@@ -2,32 +2,48 @@ import subprocess
 import winsound
 import win32api, win32con
 from Functions import AudioPlay # Ensure AudioPlay is imported to initialize pyaudio
-import Run
+from pynput import keyboard
+
 # Open serial port (match baud rate 9600)
 print("Listening for keypad presses...")
 
+keyboard = keyboard.Controller()
+
 def NumBoard(x):
-    print(f"Key pressed: {x}")        
+    import __main__
+    print(f"Key pressed: {x}")       
+
+    # Simulate key presses based on NumBoard input similar to a Numpad
     if x == '1':
-        subprocess.Popen(['brave.exe'])  # Opens Notepad
+        keyboard.press('1')
     elif x == '2':
-        winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)  # Plays Windows ding sound
+        keyboard.press('2')
     elif x == '3':
-        AudioPlay.playsound('Media\\FAHH.mp3') # Plays a custom sound file
+        keyboard.press('3')
+    elif x == '4':
+        keyboard.press('4')
+    elif x == '5':
+        keyboard.press('5')
+    elif x == '6':
+        keyboard.press('6') 
+    elif x == '7':
+        keyboard.press('7')
+    elif x == '8':
+        keyboard.press('8')
+    elif x == '9':
+        keyboard.press('9')
+    elif x == '0':
+        keyboard.press('0')
     elif x == 'A':
-        x = win32api.MapVirtualKey(win32con.VK_MEDIA_PREV_TRACK,0) # Previous track
-        win32api.keybd_event(win32con.VK_MEDIA_PREV_TRACK,x)
+        keyboard.press('+')
     elif x == 'B':
-        x = win32api.MapVirtualKey(win32con.VK_MEDIA_PLAY_PAUSE,0) # Play/Pause
-        win32api.keybd_event(win32con.VK_MEDIA_PLAY_PAUSE,x)
+        keyboard.press('-')
     elif x == 'C':
-        x = win32api.MapVirtualKey(win32con.VK_VOLUME_MUTE,0) # Mute/Unmute
-        win32api.keybd_event(win32con.VK_VOLUME_MUTE,x)
+        keyboard.press('*')
     elif x == 'D':
-        x = win32api.MapVirtualKey(win32con.VK_MEDIA_NEXT_TRACK,0) # Next track
-        win32api.keybd_event(win32con.VK_MEDIA_NEXT_TRACK,x)
+        keyboard.press('/')
     elif x == '#':
-        x = win32api.MapVirtualKey(win32con.VK_UP,0) # Next track
-        win32api.keybd_event(win32con.VK_UP,x)
+        x = win32api.MapVirtualKey(win32con.VK_RETURN,0) # Enter key
+        win32api.keybd_event(win32con.VK_RETURN,x)
     elif x == '*':
-        Run.Mode = 0
+        __main__.Mode = 0
