@@ -2,18 +2,18 @@ import subprocess
 import winsound
 import win32api, win32con
 from Functions import AudioPlay # Ensure AudioPlay is imported to initialize pyaudio
-
 # Open serial port (match baud rate 9600)
 print("Listening for keypad presses...")
 
 def MonoBoard(x):
+    import __main__
     print(f"Key pressed: {x}")        
     if x == '1':
         subprocess.Popen(['notepad.exe'])  # Opens Notepad
     elif x == '2':
         winsound.PlaySound("SystemExclamation", winsound.SND_ALIAS)  # Plays Windows ding sound
     elif x == '3':
-        AudioPlay.playsound('Media\\BUZZ.mp3') # Plays a custom sound file
+        AudioPlay.playsound('Media\\FAHH.mp3') # Plays a custom sound file
     elif x == 'A':
         x = win32api.MapVirtualKey(win32con.VK_MEDIA_PREV_TRACK,0) # Previous track
         win32api.keybd_event(win32con.VK_MEDIA_PREV_TRACK,x)
@@ -30,5 +30,4 @@ def MonoBoard(x):
         x = win32api.MapVirtualKey(win32con.VK_UP,0) # Next track
         win32api.keybd_event(win32con.VK_UP,x)
     elif x == '*':
-        x = win32api.MapVirtualKey(win32con.VK_DOWN,0) # Next track
-        win32api.keybd_event(win32con.VK_DOWN,x)
+        __main__.Mode = 1
