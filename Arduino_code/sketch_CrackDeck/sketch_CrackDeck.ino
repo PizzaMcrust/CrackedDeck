@@ -19,12 +19,12 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 void setup(){ 
   pinMode(ledpin, OUTPUT);
   digitalWrite(ledpin, HIGH);
-  Serial.begin(9600); 
+  Serial.begin(115200); 
 
   }
 void loop(){
 
   char k = keypad.getKey();
-  if(k) Serial.println(k), tone(10, 1010, 30);
+  if(k) Serial.write(k), tone(10, 1010, 30);
   
 }

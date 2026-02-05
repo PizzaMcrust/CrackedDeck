@@ -11,39 +11,39 @@ keyboard = keyboard.Controller()
 
 def NumBoard(x):
     import __main__
-    print(f"Key pressed: {x}")       
+    print("NumBoard Key Pressed:", x)    
 
     # Simulate key presses based on NumBoard input similar to a Numpad
-    if x == '1':
+    if x == 49:
         keyboard.press('1')
-    elif x == '2':
+    elif x == 50:
         keyboard.press('2')
-    elif x == '3':
+    elif x == 51:
         keyboard.press('3')
-    elif x == '4':
+    elif x == 52:
         keyboard.press('4')
-    elif x == '5':
+    elif x == 53:
         keyboard.press('5')
-    elif x == '6':
+    elif x == 54:
         keyboard.press('6') 
-    elif x == '7':
+    elif x == 55:
         keyboard.press('7')
-    elif x == '8':
+    elif x == 56:
         keyboard.press('8')
-    elif x == '9':
+    elif x == 57:
         keyboard.press('9')
-    elif x == '0':
+    elif x == 48:
         keyboard.press('0')
-    elif x == 'A':
+    elif x == 65:
         keyboard.press('+')
-    elif x == 'B':
+    elif x == 66:
         keyboard.press('-')
-    elif x == 'C':
+    elif x == 67:
         keyboard.press('*')
-    elif x == 'D':
+    elif x == 68:
         keyboard.press('/')
-    elif x == '#':
+    elif x == 35:
         x = win32api.MapVirtualKey(win32con.VK_RETURN,0) # Enter key
         win32api.keybd_event(win32con.VK_RETURN,x)
-    elif x == '*':
+    elif x == 42:
         __main__.Mode = 0
