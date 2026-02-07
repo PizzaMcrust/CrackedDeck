@@ -17,9 +17,16 @@ def MonoBoard(x):
     elif x == 51: # '3' key
         AudioPlay.playsound('Media\\AHH.mp3') # Plays a custom sound file
     elif x == 52: # '4' key
-        pass # Placeholder for future functionality
+        # Back/Return
+        win32api.keybd_event(win32con.VK_MENU,0)
+        win32api.keybd_event(win32con.VK_LEFT,0)
+        win32api.keybd_event(win32con.VK_LEFT,0, win32con.KEYEVENTF_KEYUP, 0)
+        win32api.keybd_event(win32con.VK_MENU,0, win32con.KEYEVENTF_KEYUP, 0)
     elif x == 53: # '5' key
-        pass # Placeholder for future functionality
+        win32api.keybd_event(win32con.VK_MENU,0)
+        win32api.keybd_event(win32con.VK_RIGHT,0)
+        win32api.keybd_event(win32con.VK_RIGHT,0, win32con.KEYEVENTF_KEYUP, 0)
+        win32api.keybd_event(win32con.VK_MENU,0, win32con.KEYEVENTF_KEYUP, 0)
     elif x == 54: # '6' key
         x = win32api.MapVirtualKey(win32con.VK_VOLUME_UP,0) # Volume Up
         win32api.keybd_event(win32con.VK_VOLUME_UP,x)
