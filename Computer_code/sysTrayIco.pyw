@@ -13,10 +13,12 @@ menu_options = (
     ("Run Main Program", None, run_main_program),
 )
 
-systray = SysTrayIcon(r"Icos\telePhone.ico", "Cracked Deck", menu_options)
+systray = SysTrayIcon(r"C:\\Users\\stand\\Documents\\Programs\\Cracked-deckIcos\\telePhone.ico", "Cracked Deck", menu_options)
 
 # Run once automatically on startup
 run_main_program()
 
 # And keep tray icon running
 systray.start()
+
+systray.shutdown()
